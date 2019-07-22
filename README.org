@@ -1,0 +1,44 @@
+* Prettier for Emacs
+
+** Intro
+   This package is not official prettier emacs plugin
+   I just refer the official plugin: [[https://github.com/prettier/prettier-emacs] [prettier-emacs]] code
+   and create my package
+
+** Feature
+   + better customize for prettier default config options
+   + wise prettier config priority
+   + support vscode setting about prettier
+   + support .prettierignore file
+
+** Config Priority
+   1. prettier config file in project directory
+   2. vscode settings about prettier in project directory (should set ~prettier-use-vscode-config~ to ~t~ first)
+   3. emacs prettier default options customized by use customize-group
+
+** Requirements
+  globally install prettier and can use in execpath
+  #+BEGIN_SRC sh
+  prettier -v
+  #+END_SRC
+  or install prettier locally in your project
+
+** Usage
+   download prettier.el file and add it to your emacs loadpath
+   #+BEGIN_SRC emacs-lisp
+   (require 'prettier)
+   (global-prettier-mode 1)
+   #+END_SRC
+   format command: ~prettier-format~ only works in ~prettier-support-modes~
+
+** Customization
+   #+BEGIN_SRC emacs-lisp
+   M-x customize-group prettier
+   #+END_SRC
+   + ~prettier-support-modes~ the major-mode in it, when global-prettier-mode is on, will format before save
+   + ~prettier-support-modes-alist~ the associat list of major-mode and prettier parser, you can reset it
+   + ~prettier-use-vscode-config~ Whether use the vscode prettier config
+
+** Troubleshooting
+   I just use it in Mac OS, May it can't work in Windows
+   window show install diff, please refer the official plugin document about diff
