@@ -1,9 +1,7 @@
 * Prettier for Emacs
 
 ** Intro
-   This package is not official prettier emacs plugin
-   I just refer the official plugin: [[https://github.com/prettier/prettier-emacs][prettier-emacs]] code
-   and create my package
+   This package is not official prettier plugin for emacs. I just refer the official plugin:  [[https://github.com/prettier/prettier-emacs][prettier-emacs's]] code and create my package
 
 ** Feature
    + better customize for prettier default config options
@@ -29,10 +27,9 @@
    (require 'prettier)
    (global-prettier-mode 1)
    #+END_SRC
-   + format automatically:  when turn ~global-prettier-mode~ on, it add the ~prettier-format~ command in buffer-local before-save-hook.
-   so it will format your buffer content before save.
+   + format automatically:  when turn ~global-prettier-mode~ on, it add the ~prettier-format~ command in buffer-local before-save-hook. so it will format your buffer content before save.
    + format manually:  just use ~prettier-format~ command to format current buffer, but it only works in ~prettier-support-modes~
-     
+
    you can turn off ~global-prettier-mode~ if you don't like format before save. only use the command.
 
 ** Customization
@@ -42,6 +39,7 @@
    + ~prettier-support-modes~ the major-mode in it, when global-prettier-mode is on, will format before save
    + ~prettier-support-modes-alist~ the associat list of major-mode and prettier parser, you can reset it
    + ~prettier-use-vscode-config~ whether use the vscode prettier config
+   + many config options refered by prettier cli options doc
 
 ** Troubleshooting
    I just use it in Mac OS, May it can't work in Windows.
